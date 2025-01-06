@@ -1,7 +1,5 @@
 <template>
-	<NConfigProvider
-		:theme="useColorMode().value === 'dark' ? darkTheme : lightTheme"
-	>
+	<NConfigProvider :theme="useColorMode().theme">
 		<NGlobalStyle />
 		<NModalProvider>
 			<NMessageProvider>
@@ -24,8 +22,6 @@ import {
 	NLoadingBarProvider,
 	NNotificationProvider,
 } from 'naive-ui';
-
-import { darkTheme, lightTheme } from 'naive-ui';
 </script>
 
 <style scoped>

@@ -1,4 +1,4 @@
-import { useColorMode } from '@vueuse/core';
+import { useColorMode } from '@vueuse/core';import { darkTheme, lightTheme } from 'naive-ui';
 type ColorMode = 'light' | 'dark' | 'auto';
 export default defineStore('useColorMode', () => {
 	const cookieSet = useColorMode({
@@ -12,6 +12,9 @@ export default defineStore('useColorMode', () => {
 
 	return {
 		value: cookieSet,
+		theme: computed(() => {
+			return cookieSet.value === 'dark' ? darkTheme : lightTheme;
+		}),
 		change: (to?: ColorMode) =>
 			(cookieSet.value =
 				to ?? (cookieSet.value === 'light' ? 'dark' : 'light')),
