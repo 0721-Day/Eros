@@ -10,7 +10,7 @@
 				:style="{
 					padding: `${drag.expansionPer.value * 0.09 + 12}px`,
 					paddingBottom: `12px`,
-					transition: 'padding 0.3s ease-in-out',
+					transition: 'padding 0.3s ease',
 				}"
 			>
 				<NFlex justify="space-between">
@@ -64,15 +64,15 @@
 		</NLayout>
 
 		<!-- 遮罩 -->
-		<div
-			v-if="drag.expansionPer.value > 1 || drag.isOpen.value"
-			class="absolute top-0 left-0 w-screen h-screen bg-black opacity-10"
-			:style="{
-				opacity: drag.expansionPer.value * 0.003,
-				transition: 'opacity 0.4s ease',
-			}"
-			@click="closeSidebar"
-		></div>
+		<Transition>
+			<div
+				v-if="drag.expansionPer.value > 1 || drag.isOpen.value"
+				class="absolute top-0 left-0 w-screen h-screen bg-black"
+				:style="{
+					'--tw-bg-opacity': drag.expansionPer.value / 100 / 2.7,
+				}"
+			></div>
+		</Transition>
 		<!-- 侧边栏 -->
 		<NLayout
 			class="h-screen w-full absolute top-0 left-0"
@@ -112,9 +112,6 @@ const drag = useQQSiderDrag({
 		result.switch();
 	},
 });
-
-// 关闭侧边栏
-const closeSidebar = () => {};
 </script>
 
 <style scoped>
@@ -122,6 +119,16 @@ const closeSidebar = () => {};
 .n-layout-footer {
 	background: rgba(128, 128, 128, 0.1);
 	padding: 12px;
+}
+
+.v-enter-active,
+.v-leave-active {
+	transition: opacity 0.5s ease;
+}
+
+.v-enter-from,
+.v-leave-to {
+	opacity: 0;
 }
 </style>
 
