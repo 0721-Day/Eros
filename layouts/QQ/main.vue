@@ -13,7 +13,7 @@
 					transition: 'padding 0.3s ease',
 				}"
 			>
-				<NFlex justify="space-between">
+				<NFlex justify="space-between" class="items-center">
 					<NFlex>
 						<NButton
 							:strong="true"
@@ -123,7 +123,7 @@ const drag = useQQSiderDrag({
 
 .v-enter-active,
 .v-leave-active {
-	transition: opacity 0.5s ease;
+	transition: opacity 0.3s ease;
 }
 
 .v-enter-from,

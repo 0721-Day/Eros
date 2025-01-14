@@ -5,7 +5,7 @@
 			content-class="flex flex-col relative"
 		>
 			<NLayoutHeader>
-				<NFlex justify="space-between">
+				<NFlex justify="space-between" class="items-center">
 					<NFlex>
 						<NButton
 							:strong="true"
@@ -47,11 +47,6 @@
 			</NLayoutHeader>
 			<NLayoutContent class="bg-blue-500 h-full overflow-auto">
 			</NLayoutContent>
-		</NLayout>
-
-		<!--左侧侧滑-->
-		<NLayout class="h-screen w-screen absolute top-0 left-0 " style="transform: translateX(-100%);">
-
 		</NLayout>
 	</ProvidersNaiveUI>
 </template>

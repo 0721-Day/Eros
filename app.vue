@@ -1,5 +1,5 @@
 <template>
-	<NuxtLayout name="qq" />
+	<NuxtLayout name="qq-main" />
 </template>
 
 
