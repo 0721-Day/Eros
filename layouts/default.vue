@@ -1,9 +1,23 @@
 <template>
-	<ProvidersNaiveUI class="flex flex-col relative h-screen w-screen">
-		<NLayout>
+	<ProvidersNaiveUI>
+		<NLayout
+			class="h-screen w-screen"
+			content-class="flex flex-col relative"
+		>
 			<NLayoutHeader>
 				<NFlex justify="space-between">
-					<NFlex> </NFlex>
+					<NFlex>
+						<NButton
+							:strong="true"
+							:secondary="true"
+							:circle="true"
+						>
+							<Icon
+								name="ic:round-account-circle"
+								size="1.25em"
+							/>
+						</NButton>
+					</NFlex>
 					<div></div>
 					<NFlex>
 						<NButton
@@ -18,6 +32,7 @@
 										? 'ic:round-dark-mode'
 										: 'ic:round-wb-sunny'
 								"
+								size="1.25em"
 							/>
 						</NButton>
 						<NButton
@@ -25,14 +40,18 @@
 							:secondary="true"
 							:circle="true"
 						>
-							<Icon name="ic:round-group" />
+							<Icon name="ic:round-group" size="1.25em" />
 						</NButton>
 					</NFlex>
 				</NFlex>
 			</NLayoutHeader>
-			<NLayoutContent class="h-full overflow-auto">
-				<slot />
+			<NLayoutContent class="bg-blue-500 h-full overflow-auto">
 			</NLayoutContent>
+		</NLayout>
+
+		<!--左侧侧滑-->
+		<NLayout class="h-screen w-screen absolute top-0 left-0 " style="transform: translateX(-100%);">
+
 		</NLayout>
 	</ProvidersNaiveUI>
 </template>

@@ -1,4 +1,5 @@
-import { useColorMode } from '@vueuse/core';import { darkTheme, lightTheme } from 'naive-ui';
+import { useColorMode } from '@vueuse/core';
+import { darkTheme, lightTheme } from 'naive-ui';
 type ColorMode = 'light' | 'dark' | 'auto';
 export default defineStore('useColorMode', () => {
 	const cookieSet = useColorMode({

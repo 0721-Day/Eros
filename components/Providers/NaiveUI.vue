@@ -1,5 +1,5 @@
 <template>
-	<NConfigProvider :theme="useColorMode().theme">
+	<NConfigProvider :theme="useColorMode().theme" >
 		<NGlobalStyle />
 		<NModalProvider>
 			<NMessageProvider>
